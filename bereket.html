@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Number Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Home Page -->
+    <div class="home-container" id="homePage">
+        <h1>Welcome to the Sliding Number Puzzle!</h1>
+        <p>A fun and challenging game where you rearrange numbered tiles!</p>
+        
+        <!-- Difficulty Selector -->
+        <div class="difficulty-container">
+            <label for="difficulty" style="font-size: 18px;">Select Difficulty: </label>
+            <select id="difficulty" class="difficulty-selector">
+                <option value="3">Easy (3x3)</option>
+                <option value="4">Medium (4x4)</option>
+                <option value="5">Hard (5x5)</option>
+            </select>
+        </div>
+
+        <button class="start-button" onclick="startGamePage()">Start Game</button>
+    </div>
+
+    <!-- Game Section -->
+    <div id="gamePage" style="display:none">
+        <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+
+        <!-- Game Description -->
+        <div class="description">
+            <h2>Welcome to the Sliding Number Puzzle!</h2>
+            <p>Rearrange the numbers in ascending order starting from 1 up to N.</p>
+            <p>Click on a piece to slide it into the empty space and solve the puzzle.</p>
+            <a href="#" onclick="startGame()">Start the Puzzle Game 🧩</a>
+        </div>
+
+        <!-- Status -->
+        <div class="status" id="status">Game Status: <span id="gameStatus">Paused</span></div>
+        <div class="status" id="timer">Time: <span id="time">00:00</span></div>
+
+        <!-- Puzzle Game -->
+        <div id="puzzle" class="puzzle"></div>
+
+        <!-- Game Controls -->
+        <div class="game-controls">
+            <button class="button" onclick="startGame()">Start</button>
+            <button class="button" onclick="pauseGame()" id="pauseBtn" disabled>Pause</button>
+            <button class="button" onclick="resumeGame()" id="resumeBtn" disabled>Resume</button>
+            <button class="button" onclick="restartGame()">Restart</button>
+        </div>
+
+        <!-- Links Section -->
+        <div class="links-container">
+            <a class="link" href="#" onclick="showAbout()">🔗 About</a>
+            <a class="link" href="#" onclick="showInstructions()">📄 Instructions</a>
+            <a class="link" href="#" onclick="showFeedback()">📝 Feedback</a>
+        </div>
+
+        <!-- Back Home Button -->
+        <button class="back-home-button" onclick="goBackHome()">Back to Home</button>
+    </div>
+
+    <!-- Modals (About, Instructions, Feedback) -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('aboutModal')">&times;</span>
+            <h2>About the Game 🧩</h2>
+            <p>This is a classic sliding puzzle game where the objective is to arrange the tiles in numerical order. The game gets more challenging with higher difficulty levels.</p>
+        </div>
+    </div>
+
+    <div id="instructionsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('instructionsModal')">&times;</span>
+            <h2>Instructions 📜</h2>
+            <p>1. Select the difficulty level (3x3, 4x4, or 5x5).</p>
+            <p>2. Click on a numbered tile to move it into the empty space.</p>
+            <p>3. Solve the puzzle by arranging the tiles in ascending order.</p>
+        </div>
+    </div>
+
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('feedbackModal')">&times;</span>
+            <h2>Feedback 📝</h2>
+            <p>Your feedback is important! Please share your thoughts about the game below:</p>
+            <textarea id="feedbackText" rows="4" cols="50" placeholder="Your feedback here..."></textarea>
+            <br><br>
+            <button class="button" onclick="submitFeedback()">Submit Feedback</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
