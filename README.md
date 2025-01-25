@@ -34,4 +34,5 @@ HTML/CSS for layout and styling 🎨
 JavaScript for functionality ⚙️
 Emojis for all the fun! 😜
 **📱 Contact & Support come to Ethiopia.**
+**and please vote for me**
 
